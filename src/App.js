@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
 import { Configuration, OpenAIApi } from 'openai';
+import axios from 'axios';
 
 function App() {
   const configuration = new Configuration({
