@@ -16,6 +16,7 @@ function App() {
 
   const handleClick = async () => {
     setLoading(true);
+    axios.defaults.headers.common['User-Agent'] = 'Mozilla/5.0';
     try{
       const response = await openai.createCompletion({
         model: "text-davinci-003",
