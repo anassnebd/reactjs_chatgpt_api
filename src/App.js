@@ -1,55 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
-import { useState } from 'react';
-import { Configuration, OpenAIApi } from 'openai';
+import React, { useState } from 'react';
 import axios from 'axios';
+import { Configuration, OpenAIApi } from 'openai';
 
 function App() {
   const configuration = new Configuration({
-    apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+    apiKey: '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',
   });
 
-  const openai =  new OpenAIApi(configuration);
+  const openai = new OpenAIApi(configuration);
 
-  const [prompt,setPrompt] = useState("")
-  const [result,setResult] = useState("")
-  const [loading,setLoading] = useState(false)
+  const [prompt, setPrompt] = useState('');
+  const [result, setResult] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleClick = async () => {
     setLoading(true);
-    axios.defaults.headers.common['User-Agent'] = 'Mozilla/5.0';
-    try{
+    try {
       const response = await openai.createCompletion({
-        model: "text-davinci-003",
+        model: 'text-davinci-002',
         prompt: prompt,
         temperature: 0.5,
         max_tokens: 100,
       });
       setResult(response.data.choices[0].text);
-    } catch(error){
-      console.log(error)
+    } catch (error) {
+      console.log(error);
     }
-    setLoading(false)
-  }
+    setLoading(false);
+  };
 
   return (
-    <main className='main'>
-      <div className='w-2/4 mx-auto'>
+    <main>
+      <div>
         <textarea
-        type="text"
-        value={prompt}
-        onChange={(e) => setPrompt(e.target.value)}
-        placeholder="Write here..."
-        className='textarea'>
-        </textarea>
-
-        <button onClick={handleClick}
-        disabled={loading || prompt.length === 0}
-        className="btn">
-          { loading ? "Generating..." : "Generate" }
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+          placeholder="Enter a prompt here"
+        />
+        <button onClick={handleClick} disabled={loading || prompt.length === 0}>
+          {loading ? 'Generating...' : 'Generate'}
         </button>
-
-        <pre className='result'>{result}</pre>
+        <pre>Result : {result}</pre>
       </div>
     </main>
   );
