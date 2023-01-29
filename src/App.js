@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { Configuration, OpenAIApi } from 'openai';
 
 function App() {
   const configuration = new Configuration({
-    apiKey: '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',
+    apiKey: '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',
   });
 
   const openai = new OpenAIApi(configuration);
