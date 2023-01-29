@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Configuration, OpenAIApi } from 'openai';
+import Sidebar from './components/Sidebar';
+import Main from './components/Main'
 
 function App() {
   const configuration = new Configuration({
@@ -29,19 +31,24 @@ function App() {
   };
 
   return (
-    <main>
-      <div>
-        <textarea
-          value={prompt}
-          onChange={(e) => setPrompt(e.target.value)}
-          placeholder="Enter a prompt here"
-        />
-        <button onClick={handleClick} disabled={loading || prompt.length === 0}>
-          {loading ? 'Generating...' : 'Generate'}
-        </button>
-        <pre>Result : {result}</pre>
-      </div>
-    </main>
+    <div className='flex'>
+      <Sidebar/>
+      <Main/>
+    </div>
+    // <main>
+    //   <div>
+    //     <textarea
+    //       value={prompt}
+    //       onChange={(e) => setPrompt(e.target.value)}
+    //       placeholder="Enter a prompt here"
+    //       className='font-black text-blacks'
+    //     />
+    //     <button onClick={handleClick} disabled={loading || prompt.length === 0}>
+    //       {loading ? 'Generating...' : 'Generate'}
+    //     </button>
+    //     <pre>Result : {result}</pre>
+    //   </div>
+    // </main>
   );
 }
 
