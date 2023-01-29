@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'unisans';
+    src: url('../res/Uni\ Sans\ Heavy.otf');
+}
+
+@font-face {
+font-family: 'circular';
+src: url('../res/CIRCULARSTD-MEDIUM.OTF');
+}
+
+.main,.sidebar{
+    font-family: 'unisans';
+}
+.center{
+    margin: 0 auto;
+}

@@ -2,7 +2,7 @@ import React from 'react'
 
 function Main() {
   return (
-    <div className='h-screen w-10/12 bg-purple-primary'>Main</div>
+    <div className='main h-screen w-10/12 bg-purple-primary'>Main</div>
   )
 }
 
