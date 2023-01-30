@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { Configuration, OpenAIApi } from 'openai';import './components.scss'
 import SendIcon from '../assets/icons/send.png'
 import ReactLoading from 'react-loading';
+import AvatarIcon from '../assets/icons/avatar.png'
+import TedoraFav from '../assets/icons/logo.png'
 
 
 function Main() {
     const configuration = new Configuration({
-        apiKey: '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',
+        apiKey: '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',
       });
     
       const openai = new OpenAIApi(configuration);
@@ -35,9 +37,16 @@ function Main() {
     
 
   return (
-    <div className='relative main h-screen w-10/12 block'>
-        <div className='h-5 w-3/4 center bg-red-500'>
-            <p id='prompt_quest'>{quest}</p>
+    <div className='relative main h-screen w-10/12 block pt-16'>
+        <div className='h-5 w-3/5 center'>
+            <div className='flex'>
+                <img src={AvatarIcon} className='h-9' alt="" />
+                <p id='prompt_quest' className='pt-2 pl-5'>{quest}</p>
+            </div>
+            <div className='flex mt-7'>
+                <img src={TedoraFav} className='h-9 tedora_fav' alt="" />
+                <p id='prompt_quest' className='pt-2 pl-5'>{result}</p>
+            </div>
         </div>
         <div className='absolute w-3/6 bottom-12 right-0 left-0 center flex'>
             <input 

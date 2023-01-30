@@ -9,7 +9,9 @@ module.exports = {
         'back-primary': '#101115',
         'gold-primary': '#F6B14A',
         'purple-primary': '#3D469C',
-        'input-primary': '#343434'
+        'input-primary': '#343434',
+        'side-one': '#343541',
+        'side-two': '#202123'
       }
     },
     
