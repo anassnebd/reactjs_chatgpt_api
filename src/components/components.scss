@@ -4,8 +4,13 @@
 }
 
 @font-face {
-font-family: 'circular';
-src: url('../res/CIRCULARSTD-MEDIUM.OTF');
+    font-family: 'circular';
+    src: url('../res/CIRCULARSTD-MEDIUM.OTF');
+}
+
+@font-face {
+    font-family: 'inria';
+    src: url('../res/InriaSerif-Regular.ttf');
 }
 
 .main,.sidebar{
@@ -13,4 +18,7 @@ src: url('../res/CIRCULARSTD-MEDIUM.OTF');
 }
 .center{
     margin: 0 auto;
+}
+input{
+    font-family: 'inria';
 }

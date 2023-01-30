@@ -1,12 +1,19 @@
 import React from 'react'
-import Logo from '../assets/images/tedora.png'
 import './components.scss'
+import Logo from '../assets/images/tedora.png'
+import ChatGpt from '../assets/images/chatgpt.png'
+
 
 function Sidebar() {
   return (
-    <div className='sidebar h-screen w-2/12 bg-gold-primary block'>
-        <div className='h-4/5 bg-red-900'>
-            <img src={Logo} alt="" className='center w-2/3' />
+    <div className='sidebar h-screen w-2/12 block'>
+        <div className='h-4/5 '>
+            <div className='block'>
+                <a href="https://tedora.info/">
+                    <img src={Logo} alt="" className='center w-2/3 pt-7' />
+                </a>
+                <img src={ChatGpt} alt="" className='center w-1/3 pt-2' />
+            </div>
         </div>
         <div className="h-1/5 bg-green-500">
 
