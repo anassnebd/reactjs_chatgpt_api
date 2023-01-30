@@ -13,10 +13,12 @@ function Main() {
     
       const [prompt, setPrompt] = useState('');
       const [result, setResult] = useState('');
+      const [quest, setQuest] = useState('');
       const [loading, setLoading] = useState(false);
     
       const handleClick = async () => {
         setLoading(true);
+        setQuest(prompt);
         try {
           const response = await openai.createCompletion({
             model: 'text-davinci-002',
@@ -34,8 +36,8 @@ function Main() {
 
   return (
     <div className='relative main h-screen w-10/12 block'>
-        <div className='h-5 w-10 bg-red-500'>
-            <p>jj</p>
+        <div className='h-5 w-3/4 center bg-red-500'>
+            <p id='prompt_quest'>{quest}</p>
         </div>
         <div className='absolute w-3/6 bottom-12 right-0 left-0 center flex'>
             <input 
